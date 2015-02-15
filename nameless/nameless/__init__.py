@@ -4,7 +4,7 @@ from werkzeug import secure_filename
 from flask.ext.mongoengine import MongoEngine
 
 UPLOAD_FOLDER = './resumeStorage'
-ALLOWED_EXTENSIONS = set(['pdf','html'])
+ALLOWED_EXTENSIONS = set(['pdf','html','htm'])
 
 app = Flask(__name__)
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
@@ -41,7 +41,7 @@ def upload_file():
             newResume = Resume()
             newResume.fileName = filename
             newResume.resumeSlug = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-            newResume.namelessResumeSlug = os.path.join(app.config['UPLOAD_FOLDER'], 'nameless_'.join(filename))
+            newResume.namelessResumeSlug = os.path.join(app.config['UPLOAD_FOLDER'], 'nameless_'+filename)
             newResume.otherInfo = ""
             # setattr(newResume,fileName,filename)
             # setattr(newResume,resumeSlug,os.path.join(app.config['UPLOAD_FOLDER'], filename))
@@ -61,50 +61,10 @@ def upload_file():
     '''
 
 
-
-    # def get_context(self,resumeSlug):
-    #     resume=Resume.objects.get_or_404(resumeSlug=resumeSlug)
-    #     form = self.form(request.form)
-
-    #     context = {
-    #             "resume": resume,
-    #             "form": form
-    #     }
-    #     return context
-
-	# def get(self, resumeSlug):
-	#     resume = Resume.objects.get_or_404(resumeSlug=resumeSlug)
-	#     return render_template('resume/resumeDetail.html', **context)
-
-
-	# def post(self,resumeSlug):
-	#     context=self.get_context(resumeSlug)
-	#     form = content.get('form')
-	#     if form.validate():
-	#         resume = context.get('resume')
-	#         resume.save()
-
-	#         return redirect(url_for('resumes.resumeDetail',resumeSlug=resumeSlug))
-	#     return render_template('resumes/resumeDetail.html', **context)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@app.route('/admin/resumeStorage/<filename>')
+def previously_uploaded_file(filename):
+    return send_from_directory(app.config['UPLOAD_FOLDER'],
+                               filename)
 
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):
