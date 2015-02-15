@@ -38,9 +38,13 @@ instantiate db using this tutorial http://docs.mongodb.org/manual/tutorial/getti
 python manage.py runserver
 access server by going to http://localhost:5000/
 
+###edit database
+open mongo shell
+```
+> mongo
+> use resumeDB
+> db.resumeDB.remove({})
+```
 
 ###future directions
-* gotta upload files and connect the uploaded files with the database http://flask.pocoo.org/docs/0.10/patterns/fileuploads/
-* incorporate victor's HTML resume name blinding
-* make the website display original and blinded resumes on an interface
 * convert PDF resumes to HTML for the blinding

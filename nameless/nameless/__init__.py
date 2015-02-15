@@ -45,7 +45,7 @@ def upload_file():
             newResume.namelessResumeSlug = os.path.join(app.config['UPLOAD_FOLDER'], 'nameless_'+filename)
             newResume.otherInfo = ""
             newResume.save()
-            call(["./Scan1", newResume.fileName, "to", "Scan1"])
+            call(["./Scan1", newResume.resumeSlug, "to", "Scan1"])
             return redirect(url_for('uploaded_file',
                                     filename=filename))
     return '''
