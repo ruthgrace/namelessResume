@@ -18,6 +18,18 @@ We are thankful for the mentorship received from Sophia from Waterloo, Shy from 
 
 ##Run instructions
 
+###requirements
+mongoDB
+http://www.mongodb.org/downloads
+```
+pip install virtualenv
+pip install flask
+pip install flask-script
+pip install WTForms
+pip install mongoengine
+pip install flask_mongoengine
+```
+
 ###make db:
 ```
 mongod --dbpath myDBpath
