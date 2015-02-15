@@ -46,13 +46,16 @@ instantiate db using this tutorial http://docs.mongodb.org/manual/tutorial/getti
 python manage.py runserver
 access server by going to http://localhost:5000/
 
-###edit database
+###edit database manually
 open mongo shell
 ```
 > mongo
 > use resumeDB
 > db.resumeDB.remove({})
 ```
+
+###get input files
+resumes must be in html format. you can convert PDF resumes to HTML using http://www.pdfonline.com/convert-pdf-to-html/
 
 ##future directions
 * convert PDF resumes to HTML for the blinding
