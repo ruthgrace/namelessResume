@@ -15,7 +15,7 @@ class ListView(MethodView):
 
 class DetailView(MethodView):
 
-    form = model_form(Resume, exclude=['fileName'])
+    form = model_form(Resume, exclude=['Filename'])
 
     def get_context(self,resumeSlug):
         resume=Resume.objects.get_or_404(resumeSlug=resumeSlug)
