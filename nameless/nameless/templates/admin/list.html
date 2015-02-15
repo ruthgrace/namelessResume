@@ -3,16 +3,16 @@
 {% block content %}
   <table  class="table table-bordered table-striped">
     <thead>
-      <th>filename</th>
-      <th>resume</th>
-      <th>namelessresume</th>
+      <th>File name (click to edit file)</th>
+      <th>Resume</th>
+      <th>Nameless Resume</th>
     </thead>
     <tbody>
     {% for resume in resumes %}
       <tr>
         <th><a href="{{ url_for('admin.editResume', resumeSlug=resume.resumeSlug) }}">{{ resume.fileName }}</a></th>
-        <td><a href="{{ url_for("admin.editResume", resumeSlug=resume.resumeSlug) }}" class="btn primary">Edit</a></td>
-	<td><a href="{{ url_for("admin.editNamelessResume", namelessResumeSlug=resume.namelessResumeSlug) }}" class="btn primary">Edit</a></td>
+        <td><a href="{{ url_for("admin.editResume", resumeSlug=resume.resumeSlug) }}" class="btn primary">View</a></td>
+	<td><a href="{{ url_for("admin.editNamelessResume", namelessResumeSlug=resume.namelessResumeSlug) }}" class="btn primary">View</a></td>
       </tr>
     {% endfor %}
     </tbody>
