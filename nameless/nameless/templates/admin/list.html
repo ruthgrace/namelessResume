@@ -1,0 +1,20 @@
+{% extends "admin/base.html" %}
+
+{% block content %}
+  <table  class="table table-bordered table-striped">
+    <thead>
+      <th>filename</th>
+      <th>resume</th>
+      <th>namelessresume</th>
+    </thead>
+    <tbody>
+    {% for resume in resumes %}
+      <tr>
+        <th><a href="{{ url_for('admin.editResume', resumeSlug=resume.resumeSlug) }}">{{ resume.fileName }}</a></th>
+        <td><a href="{{ url_for("admin.editResume", resumeSlug=resume.resumeSlug) }}" class="btn primary">Edit</a></td>
+	<td><a href="{{ url_for("admin.editNamelessResume", namelessResumeSlug=resume.namelessResumeSlug) }}" class="btn primary">Edit</a></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

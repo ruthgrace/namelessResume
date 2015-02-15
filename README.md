@@ -19,9 +19,9 @@ instantiate db using this tutorial http://docs.mongodb.org/manual/tutorial/getti
 ###add some stuff into the db:
 ```
 > python manage.py shell
+>>> from models import Resume
 >>> newResume = Resume(
-... fileName="myResume.pdf"
-... ,
+... fileName="myResume.pdf",
 ... resumeSlug="myResume.pdf",
 ... namelessResumeSlug="nameless_myResume.pdf"
 ... )
