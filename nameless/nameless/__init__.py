@@ -66,5 +66,5 @@ def previously_uploaded_file(filename):
 
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):
-    return send_from_directory(app.config['UPLOAD_FOLDER'],
-                               filename)
+    return redirect(url_for('admin.index'))
+#    return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
