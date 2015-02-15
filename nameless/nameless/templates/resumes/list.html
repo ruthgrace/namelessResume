@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% for resume in resumes %}
+      <h2><a href="{{ url_for('resumes.resumeDetail', resumeSlug=resume.resumeSlug) }}">{{ resume.fileName }}</a></h2>
+      <h2><a href="{{ url_for('resumes.namelessResumeDetail', namelessResumeSlug=resume.namelessResumeSlug) }}"> "namelessResumeLink" </a></h2>
+      <p>{{ resume.resumeSlug }}</p>
+      <p>{{ resume.namelessResumeSlug }}</p>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,18 @@
+
+Tumblelog application
+(mongoDB & Flask tutorial)
+http://docs.mongodb.org/ecosystem/tutorial/write-a-tumblelog-application-with-flask-mongoengine/
+
+
+right before the step you run "python manage.py shell", you have to make the database
+
+made db with
+mongod --dbpath myDBpath
+^ this is necessary to run the mongo command to get the mongo shell
+when you run app, if you have mongo running in the background somewhere, the app will find it and connect
+
+must instantiate database
+use command line (run mongo for mongo shell)
+this is separate from the rest of the python stuff
+http://docs.mongodb.org/manual/tutorial/getting-started/#create-a-collection-and-insert-documents
+
