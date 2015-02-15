@@ -10,7 +10,7 @@
     <tbody>
     {% for resume in resumes %}
       <tr>
-        <th><a href="{{ url_for('admin.editResume', resumeSlug=resume.resumeSlug) }}">{{ resume.fileName }}</a></th>
+        <th>{{ resume.fileName }}</th>
         <td><a href="{{ url_for("admin.editResume", resumeSlug=resume.resumeSlug) }}" class="btn primary">View</a></td>
 	<td><a href="{{ url_for("admin.editNamelessResume", namelessResumeSlug=resume.namelessResumeSlug) }}" class="btn primary">View</a></td>
       </tr>
