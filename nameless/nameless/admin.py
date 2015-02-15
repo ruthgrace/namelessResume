@@ -80,4 +80,4 @@ class Detail(MethodView):
 admin.add_url_rule('/admin/', view_func=List.as_view('index'))
 admin.add_url_rule('/admin/create/', defaults={'resumeSlug': None}, view_func=Detail.as_view('create'))
 admin.add_url_rule('/admin/<resumeSlug>', view_func=Detail.as_view('editResume'))
-admin.add_url_rule('/admin/<namelessResumeSlug>/', view_func=Detail.as_view('editNamelessResume'))
+admin.add_url_rule('/admin/<namelessResumeSlug>', view_func=Detail.as_view('editNamelessResume'))

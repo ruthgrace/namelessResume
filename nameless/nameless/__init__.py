@@ -2,6 +2,7 @@ import os
 from flask import Flask, request, redirect, url_for, send_from_directory, Request
 from werkzeug import secure_filename
 from flask.ext.mongoengine import MongoEngine
+from subprocess import call
 
 UPLOAD_FOLDER = './resumeStorage'
 ALLOWED_EXTENSIONS = set(['pdf','html','htm'])
@@ -43,11 +44,8 @@ def upload_file():
             newResume.resumeSlug = os.path.join(app.config['UPLOAD_FOLDER'], filename)
             newResume.namelessResumeSlug = os.path.join(app.config['UPLOAD_FOLDER'], 'nameless_'+filename)
             newResume.otherInfo = ""
-            # setattr(newResume,fileName,filename)
-            # setattr(newResume,resumeSlug,os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            # setattr(newResume,namelessResumeSlug,os.path.join(app.config['UPLOAD_FOLDER'], 'nameless_'.join(filename)))
-            # setattr(newResume,otherInfo,"")
             newResume.save()
+            call(["./Scan1", newResume.fileName, "to", "Scan1"])
             return redirect(url_for('uploaded_file',
                                     filename=filename))
     return '''
