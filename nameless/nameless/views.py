@@ -42,19 +42,19 @@ class DetailView(MethodView):
         return render_template('resumes/resumeDetail.html', **context)
 
 
-    # def postNamelessResume(self,namelessResumeSlug):
-    #     context=self.get_context(namelessResumeSlug)
-    #     form = content.getNamelessResume('form')
-    #     if form.validate():
-    #         resume = context.getNamelessResume('resume')
-    #         resume.save()
+    def postNamelessResume(self,namelessResumeSlug):
+        context=self.get_context(namelessResumeSlug)
+        form = content.getNamelessResume('form')
+        if form.validate():
+            resume = context.getNamelessResume('resume')
+            resume.save()
 
-    #         return redirect(url_for('resumes.resumeDetail',resumeSlug=resumeSlug))
-    #     return render_template('resumes/resumeDetail.html', **context)
+            return redirect(url_for('resumes.resumeDetail',resumeSlug=resumeSlug))
+        return render_template('resumes/resumeDetail.html', **context)
 
-    # def getNamelessResume(self, namelessResumeSlug):
-    #     resume = Resume.objects.get_or_404(namelessResumeSlug=namelessResumeSlug)
-    #     return render_template('resume/namelessResumeDetail.html', resume=resume)
+    def getNamelessResume(self, namelessResumeSlug):
+        resume = Resume.objects.get_or_404(namelessResumeSlug=namelessResumeSlug)
+        return render_template('resume/namelessResumeDetail.html', resume=resume)
 
 
 # Register the urls
