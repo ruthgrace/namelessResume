@@ -1,12 +1,20 @@
 #nameless resume
 
+Companies and institutions try very hard to have unbiased hiring, but the fact of the matter is that if you have a female name or a stereotypically black name, you are less likely to be hired than your white male counterparts, despite identical experience.
 
+Even STEM professors rate a female applicant for a research assistant position as less hireable and less competent compared to an identical male applicant. They even offer the female a lower starting salary on average, and are less willing to want to mentor her.
 
-currently only has a database.
+The problem lies in unconscious bias, and the solution is to blind names on resumes.
 
-This was made using the Tumblelog tutorial
+###development process
+
+This was made Frankensteining the Tumblelog mongodb/flask tutorial
 http://docs.mongodb.org/ecosystem/tutorial/write-a-tumblelog-application-with-flask-mongoengine/
+and the flask file upload tutorial
+http://flask.pocoo.org/docs/0.10/patterns/fileuploads/
+with a C++ script to find and remove the names from resumes.
 
+We are thankful for the mentorship received from Sophia from Waterloo, Shy from MLH, and Alex from Morgan Stanley
 
 ##Run instructions
 
@@ -46,5 +54,5 @@ open mongo shell
 > db.resumeDB.remove({})
 ```
 
-###future directions
+##future directions
 * convert PDF resumes to HTML for the blinding
