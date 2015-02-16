@@ -14,6 +14,8 @@ and the flask file upload tutorial
 http://flask.pocoo.org/docs/0.10/patterns/fileuploads/
 with a C++ script to find and remove the names from resumes.
 
+Everything was uploaded to GitHub by Ruth, but the development team included David Wang and Victor Duan from the University of Waterloo, and Bhaag Marvey from McMaster University.
+
 We are thankful for the mentorship received from Sophia from Waterloo, Shy from MLH, and Alex from Morgan Stanley
 
 ##Run instructions
